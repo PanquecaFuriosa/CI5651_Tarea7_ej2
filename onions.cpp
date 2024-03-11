@@ -119,7 +119,7 @@ vector<Point> convexHull(Point points[], int n)
     return hull;
 }
 
-void CapasConvexas(set<Point>& P) {
+void onions(set<Point>& P) {
 	while (P.size() > 2) {
 		int n = P.size();
 		Point points[n];
@@ -136,7 +136,7 @@ int main()
 	set<Point> points = {{0, 3}, {1, 1}, {2, 2}, {4, 4},
 					{0, 0}, {1, 2}, {4, 1}, {3, 1}, {3, 3}};
 
-    CapasConvexas(points);
+    onions(points);
     
 	return 0;
 }
