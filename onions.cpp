@@ -136,7 +136,7 @@ int main()
 	set<Point> points = {{0, 3}, {1, 1}, {2, 2}, {4, 4},
 					{0, 0}, {1, 2}, {4, 1}, {3, 1}, {3, 3}};
 
-    onions(points);
+	onions(points);
     
 	return 0;
 }
