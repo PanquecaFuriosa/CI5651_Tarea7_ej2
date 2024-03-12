@@ -94,7 +94,16 @@ vector<Point> convexHull(Point points[], int n)
         m++; 
     }
 
-    if (m < 3) return hull;
+    if (m < 3) 
+    {
+        for (int i = 0; i < m; i++)
+        {
+            Point p = points[i];
+            cout << "(" << p.x << ", " << p.y <<") ";
+            hull.push_back(p);  
+        }      
+        return hull;
+    } 
 
     stack<Point> S;
     S.push(points[0]);
@@ -120,7 +129,7 @@ vector<Point> convexHull(Point points[], int n)
 }
 
 void onions(set<Point>& P) {
-	while (P.size() > 2) {
+	while (!P.empty()) {
 		int n = P.size();
 		Point points[n];
 		copy(P.begin(), P.end(), points);
@@ -136,7 +145,7 @@ int main()
 	set<Point> points = {{0, 3}, {1, 1}, {2, 2}, {4, 4},
 					{0, 0}, {1, 2}, {4, 1}, {3, 1}, {3, 3}};
 
-	onions(points);
+    onions(points);
     
 	return 0;
 }
